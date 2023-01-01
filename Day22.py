@@ -199,14 +199,14 @@ class Test(unittest.TestCase):
         predicted_answer = calculate_answer(row, column, facing)
         self.assertEqual(6032, predicted_answer)
 
-if __name__ == '__main':
+if __name__ == '__main__':
     unittest.main(argv=[''], verbosity=3, exit=False)
 
-with open("inputs/input22.txt") as f:
-    data = f.read()
+    with open("inputs/input22.txt") as f:
+        data = f.read()
 
-monkeys_map_parsed, movement_instructions = parse_input(data)
-final_row, final_column, final_facing = follow_instructions(instructions=movement_instructions, board_map=monkeys_map_parsed)
-print(final_row, final_column, final_facing)
-answer = calculate_answer(final_row, final_column, final_facing)
-print(f"Answer: {answer}")
+    monkeys_map_parsed, movement_instructions = parse_input(data)
+    final_row, final_column, final_facing = follow_instructions(instructions=movement_instructions, board_map=monkeys_map_parsed)
+    print(final_row, final_column, final_facing)
+    answer = calculate_answer(final_row, final_column, final_facing)
+    print(f"Answer: {answer}")
